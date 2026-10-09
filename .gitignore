@@ -25,3 +25,6 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+.env.desktop
+.env.dev-backup
+/nativephp/

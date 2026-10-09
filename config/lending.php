@@ -47,6 +47,8 @@ return [
 
     // Initial accounts and Areas created by `php artisan db:seed` (Annex A).
     'setup' => [
+        // Password given to newly created accounts. Leave empty for a random one (printed once by the seeder).
+        'default_password' => env('SETUP_DEFAULT_PASSWORD'),
         'admin' => ['name' => env('SETUP_ADMIN_NAME', 'Administrator'), 'email' => env('SETUP_ADMIN_EMAIL', 'admin@lender.test')],
         'areas' => [
             1 => ['name' => env('SETUP_AREA_1_NAME', 'Area 1'), 'staff_name' => env('SETUP_AREA_1_STAFF_NAME'), 'staff_email' => env('SETUP_AREA_1_STAFF_EMAIL', 'staff1@lender.test')],
