@@ -27,7 +27,8 @@ class DatabaseSeeder extends Seeder
             $user = User::firstOrNew(['email' => $email]);
 
             if (! $user->exists) {
-                $password = $local ? 'password' : Str::password(14, symbols: false);
+                $password = config('lending.setup.default_password')
+                    ?: ($local ? 'password' : Str::password(14, symbols: false));
                 $user->password = $password;
                 $created[] = [$attributes['name'], $email, $password];
             }
